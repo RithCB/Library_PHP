@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LibraryMS</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+</style>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://uc.edu.kh/images/uc.png" alt="Logo" style="width: 60px;"> <!-- Replace with your logo URL -->
+          </a>
+      <a class="navbar-brand" href="#">Handa Library</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Login.php">Log in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="SignUP.php">Sign uP</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+          <button class="btn btn-outline-warning" type="submit" name="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <script>
+    document.addEventListener("click", function (event) {
+      let navbar = document.querySelector(".navbar-collapse");
+      let toggle = document.querySelector(".navbar-toggler");
+  
+      if (navbar.classList.contains("show") && !navbar.contains(event.target) && !toggle.contains(event.target)) {
+        navbar.style.overflow = "hidden"; // Prevent sudden collapse
+        setTimeout(() => {
+          let bsCollapse = new bootstrap.Collapse(navbar, { toggle: false });
+          bsCollapse.hide();
+        }, 10); // Delay closing to allow the animation
+      }
+    });
+  </script>
+  
+  
+
+  <!-- Bootstrap JS (required for dropdown and toggler functionality) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
