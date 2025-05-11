@@ -1,21 +1,21 @@
 <?php
-include("Database.php"); // Ensure this file has a valid $conn variable
+include("Database.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        // Securely fetch form data
+        
         $username = mysqli_real_escape_string($conn, $_POST['username']);
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         
-        // Check password confirmation
+        
         if ($_POST['password'] === $_POST['confirm_password']) {
             $password = $_POST['password'];
             $hash = password_hash($password, PASSWORD_DEFAULT);
             
-            // Correct SQL syntax
+            
             $sql = "INSERT INTO Client (username, email, password) VALUES ('$username', '$email', '$hash')"; 
             
-            // Execute Query
+            
             if (mysqli_query($conn, $sql)) {
                 echo "<script>alert('Sign Up Successful!'); window.location.href='Login.php';</script>";
             } else {
@@ -30,17 +30,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <script>
+    //redirect file
     $(document).ready(function () {
         $("#loginForm").submit(function (event) {
-            event.preventDefault(); // Prevent full page reload
+            event.preventDefault(); 
 
             $.ajax({
                 type: "POST",
-                url: "login.php", // The PHP file handling login
-                data: $(this).serialize(), // Send form data
+                url: "login.php", 
+                data: $(this).serialize(), 
                 success: function (response) {
                     if (response === "success") {
-                        window.location.href = "index_for_member.php"; // Redirect
+                        window.location.href = "index_for_member.php"; 
                     } else {
                         alert(response); // Show error message
                     }
@@ -83,18 +84,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
         }
 
-        /* Logo Section */
+        
         .logo-section {
             margin-bottom: 30px;
         }
 
         .logo-section img {
-            width: 80px; /* Adjust logo size */
+            width: 80px; 
             height: auto;
         }
 
         .logo-section h2 {
-            color: #f59e0b; /* Yellow for logo text */
+            color: #f59e0b; 
             font-size: 22px;
             font-weight: 600;
             margin-top: 10px;
@@ -175,7 +176,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <div class="container">
-        <!-- Logo Section -->
+        
         <div class="logo-section">
         <img src="https://uc.edu.kh/images/uc.png" alt="Logo" style="width: 100px;">
             <h2>Handa Library</h2>
@@ -252,11 +253,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.getElementById("confirmPasswordError").innerText = "";
             }
 
-            // If everything is valid, submit form
-            // if (isValid) {
-            //     alert("Sign Up Successful!");
-            //     // document.getElementById("signupForm").reset();
-            // }
+           
         });
     </script>
 

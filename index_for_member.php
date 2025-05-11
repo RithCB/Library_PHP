@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LibraryMS</title>
+  <title>Handa Library</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/UC.png">
+
 </head>
 
 <body>
@@ -187,6 +189,16 @@ else{
             <a id="modalLink2" onclick="borrow()" target="_blank"><button>Borrow</button></a>
         </div>
     </div>
+
+    <nav aria-label="Page navigation example" >
+  <ul class="pagination justify-content-center" >
+    <li class="page-item "><a class="page-link pagination-color-warning" href="#">Previous</a></li>
+    <li class="page-item"><a class="page-link pagination-color-warning" href="#">1</a></li>
+    <li class="page-item"><a class="page-link pagination-color-warning" href="#">2</a></li>
+    <li class="page-item"><a class="page-link pagination-color-warning" href="#">3</a></li>
+    <li class="page-item"><a class="page-link pagination-color-warning" href="#">Next</a></li>
+  </ul>
+  </nav>
 
 
     <script>
