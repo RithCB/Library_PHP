@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="icon" type="image/png" href="img/UC.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Handa Library</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/UC.png" >
+  <link rel="icon" type="image/png" href="img/UC.png">
 </head>
 
 <body>
@@ -25,7 +26,7 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Login.php">Log in</a>
+            <a class="nav-link" href="Login_form.php">Log in</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="SignUP.php">Sign up</a>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -131,7 +133,7 @@
         </div>
 
         <h3>Log in Account</h3>
-        <form id="LoginForm"  method="post">
+        <form id="LoginForm"  action="Login.php" method="post">
             <div class="input-group">
                 <input type="email" name="email" id="email" placeholder="Email" required>
                 <div class="error" id="emailError"></div>
@@ -145,29 +147,29 @@
             
         </form>
         <p class="login-link">Haven't sign in yet?<a href="SignUP.php">Sign UP</a></p>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
+        
+    </div>
+
+    <script>
 $(document).ready(function () {
     $('#LoginForm').submit(function (event) {
         event.preventDefault();
 
         $.ajax({
             type: 'POST',
-            url: 'Login.php',
+            url: 'Login.php', // 🔁 changed
             data: $(this).serialize(),
             success: function (response) {
-            const trimmedResponse = response.trim();
+                const trimmedResponse = response.trim();
 
-            if (trimmedResponse === "success") {
-                window.location.href = 'index_for_member.php';
-            } 
-            else if (trimmedResponse === "admin") {
-                window.location.href = 'admin_page.php';
-            } 
-            else {
-                alert(trimmedResponse);
-            }
-        }
+                if (trimmedResponse === "success") {
+                    window.location.href = 'index_for_member.php';
+                } else if (trimmedResponse === "admin") {
+                    window.location.href = 'admin_page.php';
+                } else {
+                    alert(trimmedResponse);
+                }
+            },
             error: function () {
                 alert("❌ Login request failed!");
             }
@@ -176,7 +178,6 @@ $(document).ready(function () {
 });
 </script>
 
-    </div>
 
    
 
